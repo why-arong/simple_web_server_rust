@@ -39,7 +39,7 @@ async fn greet(counter: web::Data<Arc<AtomicUsize>>) -> impl Responder {
         HttpResponse::BadRequest().body("No more requests allowed")
     } else {
         // Convert the string response to an HttpResponse
-        HttpResponse::Ok().body(format!("Hello! You are visitor number \n{}", count + 1))
+        HttpResponse::Ok().body(format!("Hello! You are visitor number {}\n", count + 1))
     }
 }
 
